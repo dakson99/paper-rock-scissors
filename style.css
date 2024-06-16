@@ -21,11 +21,23 @@ html {
 
 .container {
   margin: 0 auto;
-  height: 70rem;
+  height: 40rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5rem;
+}
+
+/* score track*/
+.score--track {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  margin-top: 15rem;
+}
+
+.score--track--p {
+  font-size: 3.6rem;
 }
 
 .overlay {
