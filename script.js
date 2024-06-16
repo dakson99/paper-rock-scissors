@@ -1,5 +1,17 @@
 "use strict";
 
+// selectors
+const container = document.querySelector(".container");
+const message = document.querySelector(".message");
+const btn1 = document.querySelector(".btn1");
+const btn2 = document.querySelector(".btn2");
+const btn3 = document.querySelector(".btn3");
+const allButtons = document.querySelector(".btn");
+
+const overlay = document.querySelector(".overlay");
+const playerDisplay = document.querySelector(".div--player");
+const computerDisplay = document.querySelector(".div--computer");
+
 const choice = ["rock", "paper", "scissors"];
 
 // global variables
@@ -21,7 +33,7 @@ const playRound = function (playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection === "paper") ||
     (playerSelection === "scissors" && computerSelection === "scissors")
   )
-    console.log("Draw");
+    message.textContent = "DRAW";
   // test for player win
   else if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
@@ -29,7 +41,8 @@ const playRound = function (playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     playerScore++;
-    console.log("Player Wins");
+
+    message.textContent = "PLAYER WINS";
 
     // test for computer win
   } else if (
@@ -38,9 +51,39 @@ const playRound = function (playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "rock")
   ) {
     computerScore++;
-    console.log("Computer Wins");
+    message.textContent = "COMPUTER WINS";
   }
 };
+
+container.addEventListener("click", function (e) {
+  if (e.target.classList.contains("btn")) {
+    const clicked = e.target.dataset.choice;
+    playRound(clicked, computerPlay());
+  }
+});
+
+// Player wins
+if (computerScore === 5) {
+  message.textContent = "COMPUTER WINS THE GAME";
+  computerDisplay.classList.add("winner");
+  overlay.classList.remove("hidden");
+}
+
+if (playerScore === 5) {
+  message.textContent = "PLAYER WIN THE GAME";
+  playerDisplay.classList.add("winner");
+  overlay.classList.remove("hidden");
+}
+
+// take e.target attribute
+
+// run playRound with (clicked, computer)
+
+// 1. add event listeners to buttons.
+
+// when button clicked, playRound
+
+// selection from round
 
 const game = function () {
   for (let i = 0; i < 5; i++) {
