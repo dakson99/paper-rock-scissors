@@ -25,13 +25,13 @@ let computerScore = 0;
 let playerChoice;
 let computerChoice;
 let clicked;
+let playerPlay;
+let compPlay;
 
 // functions
 const computerPlay = function () {
   return choice[Math.floor(Math.random() * choice.length)];
 };
-
-const compPlay = computerPlay();
 
 const displayScore = function () {
   labelPlayer.textContent = `Player score: ${playerScore}`;
@@ -57,7 +57,8 @@ const playRound = function (playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     playerScore++;
-    displayMessage(`Player wins: ${clicked} beats ${compPlay}!`);
+
+    displayMessage(`Player wins: ${playerPlay} beats ${compPlay}!`);
 
     // test for computer win
   } else if (
@@ -66,14 +67,17 @@ const playRound = function (playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "rock")
   ) {
     computerScore++;
-    displayMessage(`Computer wins: ${compPlay} beats ${clicked}!`);
+    displayMessage(`Computer wins: ${compPlay} beats ${playerPlay}!`);
   }
 };
 
 container.addEventListener("click", function (e) {
   if (e.target.classList.contains("btn")) {
-    clicked = e.target.dataset.choice;
-    playRound(clicked, compPlay);
+    playerPlay = e.target.dataset.choice;
+
+    // get computer random number each time, call playRound
+    compPlay = computerPlay();
+    playRound(playerPlay, compPlay);
   }
 });
 
@@ -92,36 +96,6 @@ if (playerScore === 5) {
   playerDisplay.classList.add("winner");
   overlay.classList.remove("hidden");
 }
-
-// take e.target attribute
-
-// run playRound with (clicked, computer)
-
-// 1. add event listeners to buttons.
-
-// when button clicked, playRound
-
-// selection from round
-
-/*
-const game = function () {
-  for (let i = 0; i < 5; i++) {
-    computerChoice = computerPlay();
-    playerChoice = prompt(
-      "Choose your destiny! Rock, Paper or Scissors?"
-    ).toLowerCase();
-    playRound(playerChoice, computerChoice);
-  }
-
-  if (computerScore > playerScore)
-    console.log("Computer is the winner of the game");
-  else if (playerScore > computerScore)
-    console.log("Player is the winner of the game!");
-  else console.log("It's a draw! We have no winner!");
-};
-
-game();
-*/
 
 // Reset game
 btnsPlayAgain.forEach((el) =>
