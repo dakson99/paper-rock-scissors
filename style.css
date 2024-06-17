@@ -11,7 +11,7 @@ html {
 body {
   background-color: #f1f3f5;
   font-family: "Playfair Display", sans-serif;
-
+  height: 100vh;
   color: #02261b;
 }
 
@@ -135,4 +135,18 @@ body {
 .hidden {
   opacity: 0;
   visibility: hidden;
+}
+
+.cpyright {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 30px;
+  width: 100%;
+}
+
+.paragraph__footer {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #495057;
 }
