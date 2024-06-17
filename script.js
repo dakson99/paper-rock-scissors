@@ -79,23 +79,23 @@ container.addEventListener("click", function (e) {
     compPlay = computerPlay();
     playRound(playerPlay, compPlay);
   }
+
+  // DIsplay score
+  displayScore();
+
+  // Player wins
+  if (computerScore === 3) {
+    displayMessage("COMPUTER WINS THE GAME");
+    computerDisplay.classList.add("winner");
+    overlay.classList.remove("hidden");
+    
+  // computer wins
+  } else if (playerScore === 3) {
+    displayMessage("YOU WIN THE GAME");
+    playerDisplay.classList.add("winner");
+    overlay.classList.remove("hidden");
+  }
 });
-
-// DIsplay score
-displayScore();
-
-// Player wins
-if (computerScore === 5) {
-  displayMessage("COMPUTER WINS THE GAME");
-  computerDisplay.classList.add("winner");
-  overlay.classList.remove("hidden");
-}
-
-if (playerScore === 5) {
-  displayMessage("YOU WIN THE GAME");
-  playerDisplay.classList.add("winner");
-  overlay.classList.remove("hidden");
-}
 
 // Reset game
 btnsPlayAgain.forEach((el) =>
