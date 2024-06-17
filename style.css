@@ -8,24 +8,41 @@ html {
   font-size: 10px;
 }
 
-.btn {
-  width: 15rem;
-  height: 15rem;
+body {
+  background-color: #f1f3f5;
+  font-family: "Playfair Display", sans-serif;
+
+  color: #02261b;
 }
 
 .message {
   text-align: center;
   font-size: 4.2rem;
   margin-top: 8rem;
+  font-weight: 600;
 }
 
 .container {
   margin: 0 auto;
-  height: 40rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5rem;
+  margin-top: 15rem;
+}
+
+.btn,
+.btn:active {
+  width: 15rem;
+  height: 15rem;
+  border: none;
+  border-radius: 30px;
+
+  background-color: #077252;
+}
+
+.btn:hover {
+  background-color: #066649;
 }
 
 /* score track*/
@@ -34,6 +51,7 @@ html {
   gap: 5rem;
   justify-content: center;
   margin-top: 15rem;
+  font-weight: 600;
 }
 
 .score--track--p {
@@ -68,10 +86,17 @@ html {
   cursor: pointer;
   margin: 0 auto;
   margin-top: 35rem;
-  background-color: blue;
+  background-color: #f1f3f5;
   transition: all 0.4s ease-in-out;
   visibility: hidden;
   transform: translate(-50%, -50%) scale(0);
+  border-radius: 30px;
+  padding: 6rem 0;
+  visibility: hidden;
+}
+
+.img {
+  max-width: 80%;
 }
 
 .winner {
@@ -82,16 +107,29 @@ html {
 .para {
   text-align: center;
   font-size: 3rem;
-  margin-top: 2rem;
 }
 
-.para-sub {
+.parawin {
+  color: #343a40;
+  font-weight: 500;
+}
+
+.para-sub,
+.para-sub:active {
   height: 6rem;
   width: 15rem;
+  padding: 2rem 0;
   font-size: 2rem;
   font-weight: 600;
   border-radius: 50px;
   border: none;
+  background-color: #077252;
+  color: #fff;
+  font-weight: 600;
+}
+
+.para-sub:hover {
+  background-color: #066649;
 }
 
 .hidden {

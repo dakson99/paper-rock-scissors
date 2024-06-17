@@ -49,7 +49,7 @@ const playRound = function (playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection === "paper") ||
     (playerSelection === "scissors" && computerSelection === "scissors")
   )
-    displayMessage("DRAW");
+    displayMessage(`It's a tie: ${playerPlay} ties with ${compPlay}!`);
   // test for player win
   else if (
     (playerSelection === "rock" && computerSelection === "scissors") ||

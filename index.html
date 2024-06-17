@@ -4,19 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Paper Rock Scissors</title>
   </head>
   <body>
-    <p class="message">Choose your destiny! Rock, Paper or Scissors</p>
+    <p class="message">Choose your destiny! Rock, Paper or Scissors?</p>
     <div class="score--track">
       <p class="score--track--p score--track--player">Player score: 0</p>
       <p class="score--track--p score--track--computer">Computer score: 0</p>
     </div>
-    <div class="container">
-      <button data-choice="rock" class="btn btn1">ROCK</button>
-      <button data-choice="paper" class="btn btn2">PAPER</button>
-      <button data-choice="scissors" class="btn btn3">SCISSORS</button>
-    </div>
+    <div class="container--all">
+      <div class="container">
+        <button data-choice="rock" class="btn btn1">
+          <img
+            data-choice="rock"
+            class="btn img"
+            src="imgs/rock.svg"
+            alt="choose rock"
+          />
+        </button>
+        <button data-choice="paper" class="btn btn2">
+          <img
+            data-choice="paper"
+            src="imgs/paper.svg"
+            class="img btn"
+            alt="choose paper"
+          />
+        </button>
+        <button data-choice="scissors" class="btn btn3">
+          <img
+            src="imgs/scissors.svg"
+            data-choice="scissors"
+            class="img btn"
+            alt="choose scissors"
+          />
+        </button>
+      </div>
     <div class="div div--player">
       <p class="para parawin">You win!</p>
       <button class="para-sub">Play again</button>
